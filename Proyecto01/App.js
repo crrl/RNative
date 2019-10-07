@@ -68,9 +68,18 @@ usoOperadorflecha() {
     */
     //Devolver un valor.
     const getValor = () => 'Curso React Native';
-    this.setState({
-      valor: getValor()
-    });
+
+    //Devolver un objeto.
+    const getObjeto = () => ({
+      nombre: 'Luis',
+      puesto: 'Programador'
+    })
+    
+    // this.setState({
+    //   valor: getValor()
+    // });
+
+    this.setState({ valor: getObjeto().nombre });
   }
 
   componentDidMount() {
