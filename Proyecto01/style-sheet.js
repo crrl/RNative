@@ -2,34 +2,10 @@ import  { StyleSheet } from 'react-native';
 
 const defaultStyle = StyleSheet.create({
   container: {
-    //flex: 1,
-    //Dirección de los elementos hijos.
-    /*
-    flexDirection: 
-      row: Horizontal.
-      column: Vertical (Defecto)
-    */
+    flex: 1,
     flexDirection: 'row',
-
-
-    // Alineación de los hijos.
-    /* 
-      justifyContent: 
-        flex-start: Inicio
-        flex-end: Final
-        center: Centro
-        space-around: Distribución equitativa sobre el viewport
-        space-between: Distribución equitativa sobre el viewport a partir del segundo elemento 
-    */
-    justifyContent: 'space-around',
-
-
-    //Alineación vertical
-    /*
-    
-    */
-    alignItems: 'center',
-    height: '100%'
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   formato: {
     fontSize: 40,
