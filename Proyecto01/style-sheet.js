@@ -22,6 +22,26 @@ const defaultStyle = StyleSheet.create({
   },
   cuadro3: {
     backgroundColor: 'orange'
+  },
+  titulo: {
+    textAlign: 'center',
+    fontSize: 40,
+    marginBottom: 20
+  },
+  subTitulo: {
+    textAlign: 'center',
+    alignItems: 'center',
+    opacity: 0.7,
+    fontSize: 20,
+    marginBottom: 30  
+  },
+  boton: {
+    backgroundColor: '#0F00FF',
+    padding: 10,
+    borderRadius: 10
+  }, 
+  textoBoton: {
+    color: 'white'
   }
 })
 

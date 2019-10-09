@@ -2,57 +2,81 @@ import React, { Component } from 'react';
 import { View,
    Text,
    Animated, // Para aplicar elementos de animación.
-   Easing // Efectos asociados a las animaciones.
+   Easing, // Efectos asociados a las animaciones.
+   TouchableHighlight
   } from 'react-native';
 import { defaultStyle } from './style-sheet';
 
+
 export default class App extends Component {
 
-  constructor() {
-    super();
-    // Valor inicial aportado por el objeto Animated.Value para girar la imagen
-    this.spinValue = new Animated.Value(0);
+  constructor () {
+    super()
+    this.animatedValue1 = new Animated.Value(0)
+    this.animatedValue2 = new Animated.Value(0)
+    this.animatedValue3 = new Animated.Value(0)
   }
 
-  componentDidMount() {
-    this.gira();
+  componentDidMount () {
+    this.animate()
   }
 
-  // Método que implementa la animación.
-gira() {
-  this.spinValue.setValue(0) // Posición de la animación
-    // Modificar el valor de la nimación durante un periodo.
-  Animated.timing(
-    //Valor
-    this.spinValue,
-    // Configuración de la animación.
-    {
-      toValue: 1,        // Representa el porcentaje de la animación (0..1).
-      duration: 5000,       // Milisegundos en lo que se realiza la animación.
-      easing: Easing.linear // Tipo de efectos sobre la animación
+  animate () {
+    this.animatedValue1.setValue(0)
+    this.animatedValue2.setValue(0)
+    this.animatedValue3.setValue(0)
+    const createAnimation = function (value, duration, easing, delay = 0) {
+      return Animated.timing(
+        value,
+        {
+          toValue: 1,
+          duration,
+          easing,
+          delay
+        }
+      )
     }
-  // Método asincrono a ejecutar una vez terminada la animación.
-  ).start(() => this.gira());
-}
+    Animated.parallel([
+      createAnimation(this.animatedValue1, 500, Easing.ease),
+      createAnimation(this.animatedValue2, 800, Easing.ease, 500),
+      createAnimation(this.animatedValue3, 800, Easing.ease, 1300)        
+    ]).start()
+  }
+
 
   render () {
-    const image = {
-      uri: 'https://previews.123rf.com/images/djvstock/djvstock1706/djvstock170608859/80423592-figura-sim%C3%A9trica-icono-sobre-fondo-blanco-ilustraci%C3%B3n-vectorial.jpg'
-    }
-    const spin = this.spinValue.interpolate({
+    // El título se va a expandir.
+    const scaleText = this.animatedValue1.interpolate({
       inputRange: [0, 1],
-      outputRange: ['0deg', '3600deg']
-    })
+      outputRange: [0.5, 2]
+    });
+
+    // El subtítulo gira.
+    const spinText = this.animatedValue2.interpolate({
+      inputRange: [0, 1],
+      outputRange: ['0deg', '720deg']
+    });
+
+    // El botón se presenta desde la parte superior del view port.
+    const introButton = this.animatedValue3.interpolate({
+      inputRange: [0, 1],
+      outputRange: [-100, 400]
+    });
+
     return (
       <View style={defaultStyle.container}>
-        <Animated.Image
-          style={{
-            width: 277,
-            height: 250,
-          transform: [{rotate: spin}]
-          }} 
-          source={image}
-          />
+        <Animated.View style={{ transform: [{scale: scaleText}] }}>
+          <Text style= {defaultStyle.titulo}>Coppel</Text>
+        </Animated.View>
+        <Animated.View style={{ marginTop: 20, transform: [{rotate: spinText}]}}>
+          <Text style= {defaultStyle.subTitulo}>Bienvenido al Curso!</Text>
+        </Animated.View>
+        <Animated.View style={{top: introButton, position: 'absolute'}}>
+          <TouchableHighlight style= {defaultStyle.boton}
+                              onPress={() => this.animate()}>
+            <Text style={defaultStyle.textoBoton}> Reiniciar</Text>
+          </TouchableHighlight>
+        </Animated.View>
       </View>
     )
   }
