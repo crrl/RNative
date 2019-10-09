@@ -1,2 +1,12 @@
+Repos npm globales necesarios para trabajar
+==================
 expo-cli
 create-react-navite-app
+
+
+Locales
+==================
+Routing:
+npm install react-navigation --save
+npm install react-navigation-stack --save
+npm install react-native-gesture-handler --save
