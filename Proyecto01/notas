@@ -14,6 +14,7 @@ expo install expo-brightness
 expo install expo-permissions
 
 Navigation tabs
+===========
   - instalación de las siguiente dependencias
     npm install react-native-reanimated@1.2.0 --save
     npm install react-navigation-tabs@1.2.0 --save
@@ -23,3 +24,16 @@ Para videos
 ============
   expo install expo-av
   
+
+Web View
+=============
+  npm install react-native-webview
+
+
+  notas útiles:
+
+  https://dev.to/iam_timsmith/class-components-vs-stateless-functional-components-51he
+  
+  Hooks:
+  https://medium.com/better-programming/react-native-hooks-to-do-app-with-crud-operations-and-asyncstorage-ff20b1c862b8
+  https://es.reactjs.org/docs/hooks-overview.html
