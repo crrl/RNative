@@ -10,3 +10,16 @@ Routing:
 npm install react-navigation --save
 npm install react-navigation-stack --save
 npm install react-native-gesture-handler --save
+expo install expo-brightness
+expo install expo-permissions
+
+Navigation tabs
+  - instalación de las siguiente dependencias
+    npm install react-native-reanimated@1.2.0 --save
+    npm install react-navigation-tabs@1.2.0 --save
+
+
+Para videos
+============
+  expo install expo-av
+  

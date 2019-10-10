@@ -1,5 +1,4 @@
-import  { StyleSheet } from 'react-native';
-
+import  { StyleSheet, Dimensions } from 'react-native';
 const defaultStyle = StyleSheet.create({
   container: {
     flex: 1,
@@ -58,8 +57,73 @@ const estiloSecundario = StyleSheet.create({
   }
 });
 
+const style15 = StyleSheet.create({
+  container: {
+    width: '100%',
+    height: 40,
+    padding: 3,
+    borderColor: 'navy',
+    borderWidth: 3,
+    borderRadius: 30,
+    marginTop: 200,
+    justifyContent: 'center'
+  },
+  interior: {
+    width: '100%',
+    height: 30,
+    borderRadius: 15,
+    backgroundColor: 'green',
+  },
+  etiqueta: {
+    width:'100%',
+    fontSize: 23,
+    position: 'absolute',
+    textAlign: 'center',
+    zIndex: 2
+  }
+})
+
+
+const style16 = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 80
+  },
+  indicadorActividad: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    height:80
+  }
+});
+
+
+const style18 = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 50,
+    width: Dimensions.get('window').width
+ },
+ textInput: {
+    margin: 10,
+    height: 100,
+    width: 200,
+    borderWidth: 3,
+    backgroundColor: 'navy',
+    color: 'white',
+    textAlign: 'center'
+ }
+});
+
 export {
   defaultStyle,
   estiloAuxiliar,
-  estiloSecundario
+  estiloSecundario,
+  style15,
+  style16,
+  style18
 }
