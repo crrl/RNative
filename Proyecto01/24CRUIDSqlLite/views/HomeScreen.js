@@ -34,6 +34,7 @@ export  default class HomeScreen extends Component {
                 <CButton 
                 texto={"Actualiza"}
                 onPress={() => navigate('EditEmployee') }
+                id= {22}
                 />
                 <CButton 
                 texto={"Elimina"}

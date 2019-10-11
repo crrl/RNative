@@ -10,6 +10,7 @@ export  default class EditEmployee extends Component {
 
     constructor(props) {
         super(props);
+        console.log(props);
         this.state = {
             nombre: '',
             apellido: '',
@@ -43,7 +44,7 @@ export  default class EditEmployee extends Component {
         const {nombre, apellido, email} = this.state;
         
         if (!nombre || !apellido || !email)  {
-            alert('no no no');
+            alert('Faltan datos.');
             return;
         }
         const updateEmployeeQuery = 'UPDATE empleados SET nombre = ?, apellido = ? WHERE email = ?';
