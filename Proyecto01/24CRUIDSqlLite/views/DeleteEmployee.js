@@ -8,9 +8,8 @@ export  default class DeleteEmployees extends Component {
     render () {
         return(
             <View style={styles.container}>
-                <Text style={styles.text}>
-                
-                </Text>
+                <CCaptura placeholder= {'Email: '}/>
+                <CButton texto={"Eliminar"} />
             </View>
         )
     }

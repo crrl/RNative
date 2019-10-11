@@ -7,7 +7,7 @@ export default CCaptura = props => {
                 <TextInput 
                     underlineColorAndroid= "transparent"
                     placeholder= {props.placeholder}
-                    placeholderTextColor= '#F3F3F3'
+                    placeholderTextColor= '#AFAFAF'
                     keyboardType={props.keyboardType}
                     onChangeText= {props.onChangeText}
                     returnKeyType= {props.returnKeyType}
@@ -27,7 +27,9 @@ const styles = StyleSheet.create({
         marginHorizontal: 35,
         marginTop: 10,
         borderColor: '#007FFF',
-        borderWidth: 1
+        paddingLeft:15,
+        borderWidth: 1,
+        width: '70%'
     }
 })
 

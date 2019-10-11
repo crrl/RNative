@@ -8,9 +8,13 @@ export  default class EditEmployee extends Component {
     render () {
         return(
             <View style={styles.container}>
-                <Text style={styles.text}>
-                
-                </Text>
+                <CCaptura placeholder= {'Email: '}/>
+                <CButton texto={"Buscar"} />
+
+                <CCaptura placeholder= {'Nombre: '}/>
+                <CCaptura placeholder= {'Apellido: '}/>
+                <CCaptura placeholder= {'Email: '}/>
+                <CButton texto={"Actualizar Datos"}/>
             </View>
         )
     }

@@ -46,7 +46,7 @@ const App = createStackNavigator({
       headerTintColor: colorEncabezado
     }
   },
-  showEmployee: {
+  ShowEmployee: {
     screen: showEmployee,
     navigationOptions: {
       title: 'Mostrar Empleado',
