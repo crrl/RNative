@@ -5,7 +5,9 @@ export default StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        width: '90%'
+        width: '90%',
+        height: '100%',
+        marginLeft: '5%'
     },
     texto: {
         fontSize: 40
